@@ -26,7 +26,7 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      {/* <ListItem className={classes.listItem}>
+      <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           navDropdown
@@ -49,7 +49,7 @@ export default function HeaderLinks(props) {
             </a>,
           ]}
         />
-      </ListItem> */}
+      </ListItem>
       <ListItem className={classes.listItem}>
         <Link href="/index" passHref>
           <Button
@@ -74,6 +74,18 @@ export default function HeaderLinks(props) {
           </Button>
         </Link>
       </ListItem>
+      <ListItem className={classes.listItem}>
+        <Link href="/aboutus" passHref>
+          <Button
+            // href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-navbar"
+            color="transparent"
+            // target="_blank"
+            className={classes.navLink}
+          >
+            <Icon className={classes.icons}>unarchive</Icon> About Us
+          </Button>
+        </Link>
+      </ListItem>
       {/* <ListItem className={classes.listItem}>
         <Button
           href="https://www.creative-tim.com/product/nextjs-material-kit?ref=njsmk-navbar"
@@ -84,12 +96,12 @@ export default function HeaderLinks(props) {
           <CloudDownload className={classes.icons} /> Download
         </Button>
       </ListItem> */}
-      <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
+      {/* <ListItem className={classes.listItem}>
+        <Tooltip title="Delete">
           <IconButton aria-label="Delete">
             <DeleteIcon />
           </IconButton>
-        </Tooltip>*/}
+        </Tooltip>
         <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
@@ -105,8 +117,8 @@ export default function HeaderLinks(props) {
             <i className={classes.socialIcons + " fab fa-twitter"} />
           </Button>
         </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
+      </ListItem> */}
+      {/* <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-facebook"
           title="Follow us on facebook"
@@ -122,8 +134,8 @@ export default function HeaderLinks(props) {
             <i className={classes.socialIcons + " fab fa-facebook"} />
           </Button>
         </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
+      </ListItem> */}
+      {/* <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-tooltip"
           title="Follow us on instagram"
@@ -139,7 +151,7 @@ export default function HeaderLinks(props) {
             <i className={classes.socialIcons + " fab fa-instagram"} />
           </Button>
         </Tooltip>
-      </ListItem>
+      </ListItem> */}
     </List>
   );
 }
