@@ -37,7 +37,7 @@ const Index = (props) => {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        // brand="MV Driving School"
+        brand="MV Driving School"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -93,7 +93,7 @@ const Index = (props) => {
           <WorkSection />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

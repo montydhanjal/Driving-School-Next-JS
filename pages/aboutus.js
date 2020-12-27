@@ -32,7 +32,7 @@ const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-export default function LandingPage(props) {
+export default function aboutus(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (
@@ -53,17 +53,16 @@ export default function LandingPage(props) {
         filter
         small
         responsive
-        image={require("assets/img/driving/prices.jpg")}
+        image={require("assets/img/driving/aboutus.jpg")}
       >
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Your Story Starts With Us.</h1>
               <h4>
-                Every landing page needs a small description after the big bold
-                title, that{"'"}s why we added this text here. Add here all the
-                information that can make you or your product create the first
-                impression.
+                We have equipped our car’s with 2 Brakes, and 2 Gas Pedal. You
+                will also find that our dri­ving instruc­tors are very skilled ,
+                pro­fes­sional, patient and friendly.
               </h4>
               <br />
             </GridItem>
@@ -75,42 +74,26 @@ export default function LandingPage(props) {
           <div className={classNames(classes.section)}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={8}>
-                <h2 className={classes.titleDark}>Our Policies</h2>
+                <h4 className={classes.paragraph}>
+                  MV Dri­ving is one of the best and safest dri­ving school
+                  ser­vice thriv­ing in the Cal­i­for­nia area. We pro­vide
+                  inten­sive dri­ving lessons to prop­erly equip you before
+                  hit­ting the road. Our experts strive to pro­vide the best
+                  pro­fes­sional ser­vice, includ­ing crash course dri­ving
+                  lessons, which focus on dri­ving instruc­tions and mas­tery of
+                  road rules. With these, we assure cus­tomer sat­is­fac­tion at
+                  very afford­able rates. You’ll find that our dri­ving
+                  instruc­tors are very skilled, pro­fes­sional, patient and
+                  friendly. MV Driving’s pro­fes­sional staff will kindly
+                  pro­vide you with all the nec­es­sary infor­ma­tion that you
+                  will need to help you obtain your driver’s license, reme­dial
+                  lessons, spe­cial drive test requests, or answer other
+                  ques­tions that you may have.
+                </h4>
               </GridItem>
             </GridContainer>
           </div>
 
-          <List
-            // component="nav"
-            className={classes.subtitle}
-            aria-label="contacts"
-          >
-            <ListItem>
-              <ListItemIcon>
-                <StarIcon />
-              </ListItemIcon>
-              <ListItemText primary="The dri­ving les­son time is reserved exclu­sively for you. Please honor our 48 hour can­cel­la­tion policy." />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <StarIcon />
-              </ListItemIcon>
-              <ListItemText primary="There is a $40 can­cel­la­tion fee if you can­cel with less than 48 hours notice or no show." />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <StarIcon />
-              </ListItemIcon>
-              <ListItemText primary="$25- Fee for lost com­ple­tion form and return check." />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <StarIcon />
-              </ListItemIcon>
-              <ListItemText primary="Money is only valid for one year start­ing the day you pay." />
-            </ListItem>
-          </List>
-          <Aboutus />
           <WorkSection />
         </div>
       </div>

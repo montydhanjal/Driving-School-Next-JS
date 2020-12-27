@@ -10,8 +10,9 @@ import MonetizationOn from "@material-ui/icons/MonetizationOn";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import InfoArea from "components/InfoArea/InfoArea.js";
-
+import Small from "components/Typography/Small.js";
 import styles from "assets/jss/nextjs-material-kit/pages/landingPageSections/productStyle.js";
+import Danger from "components/Typography/Danger.js";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -19,33 +20,80 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import StarIcon from "@material-ui/icons/Star";
 
+// table styles
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+
 const useStyles = makeStyles(styles);
+
+function createData(city, service, price, test) {
+  return { city, service, price, test };
+}
 
 export default function Aboutus() {
   const classes = useStyles();
+
+  const rows = [
+    createData("Fremont, Union City, Newark", "$90", "$265", "$100"),
+    createData("Milpitas", "$90", "$265", "$100"),
+  ];
+
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
-          <h2 className={classes.title}>
+          <h4 className={classes.title}>
             Schedule Your Driving Lessons with Us!
+          </h4>
+
+          <h2 className={classes.title}>
+            Call or Text @ 4084778206
+            <br />
+            <Small className={classes.description}>
+              Mon-​Fri: 9:00 AM-5:00 PM Sat-​Sun: Closed After hours only text
+              or email
+            </Small>
           </h2>
-          <h2 className={classes.description}>Call or Text @ 4084778206</h2>
-          <h5 className={classes.description}>
-            Mon-​Fri: 9:00 AM-5:00 PM Sat-​Sun: Closed After hours only text or
-            email
-          </h5>
         </GridItem>
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>Our Pricing</h2>
-          <h3 className={classes.title}>
-            Fre­mont, Union City and Newark: $95 ( 2 Hours)
-          </h3>
-          <h3 className={classes.title}>Mil­pi­tas: $95 ( 2 Hours )</h3>
-          <h5 className={classes.description}>
-            Mon-​Fri: 9:00 AM-5:00 PM Sat-​Sun: Closed After hours only text or
-            email
-          </h5>
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>City</TableCell>
+                  <TableCell align="right">2 Hours</TableCell>
+                  <TableCell align="right">6 Hours</TableCell>
+                  <TableCell align="right">
+                    DMV Test <br></br> (Fremont DMV Only)
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow key={row.name}>
+                    <TableCell component="th" scope="row">
+                      {row.city}
+                    </TableCell>
+                    <TableCell align="right">{row.service}</TableCell>
+                    <TableCell align="right">{row.price}</TableCell>
+                    <TableCell align="right">{row.test}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+            <Danger className={classes.dangerText}>
+              - Dri­ving Test Only “For using our car at the DMV” (Fre­mont DMV)
+              *Only for the stu­dents who have enrolled in the dri­ving Classes.
+            </Danger>
+          </TableContainer>
+
           <List component="nav" className={classes.title} aria-label="contacts">
             <ListItem>
               <ListItemText primary="All our classes includes following services:" />
