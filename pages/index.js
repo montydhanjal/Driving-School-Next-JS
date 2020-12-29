@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -72,16 +73,17 @@ const Index = (props) => {
                 road rules.
               </h4>
               <br />
-              <Button
-                color="danger"
-                size="lg"
-                href="/prices"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fas fa-play" />
-                Pricing
-              </Button>
+              <Link href="/prices" passHref>
+                <Button
+                  color="danger"
+                  size="lg"
+                  // target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {/* <i className="fas fa-play" /> */}
+                  Pricing
+                </Button>
+              </Link>
             </GridItem>
           </GridContainer>
         </div>

@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-drivingschoolnextjs-dev-194128-authRole",
+      "UnauthRoleArn": "arn:aws:iam::817844477750:role/amplify-drivingschoolnextjs-dev-194128-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::817844477750:role/amplify-drivingschoolnextjs-dev-194128-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-drivingschoolnextjs-dev-194128-deployment",
+      "UnauthRoleName": "amplify-drivingschoolnextjs-dev-194128-unauthRole",
+      "StackName": "amplify-drivingschoolnextjs-dev-194128",
+      "StackId": "arn:aws:cloudformation:us-west-2:817844477750:stack/amplify-drivingschoolnextjs-dev-194128/be7fc7f0-4987-11eb-b821-06b3b4d68bb3",
+      "AmplifyAppId": "d3vs58t9vnm0c1"
+    }
+  }
+}

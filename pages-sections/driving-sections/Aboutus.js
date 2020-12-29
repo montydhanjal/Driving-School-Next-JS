@@ -52,11 +52,11 @@ export default function Aboutus() {
           </h4>
 
           <h2 className={classes.title}>
-            Call or Text @ 4084778206
+            To Register Call or Text @ 4084778206
             <br />
             <Small className={classes.description}>
-              Mon-​Fri: 9:00 AM-5:00 PM Sat-​Sun: Closed After hours only text
-              or email
+              Mon-​Fri: 9:00 AM-5:00 PM Sat-​Sun: Closed<br></br> After hours
+              only text or email
             </Small>
           </h2>
         </GridItem>
