@@ -36,6 +36,7 @@
     "@material-ui/core": "4.9.13",
     "@material-ui/icons": "4.9.1",
     "@zeit/next-sass": "1.0.1",
+    "aws-amplify": "^3.3.13",
     "classnames": "2.2.6",
     "formik": "^2.2.6",
     "moment": "2.25.3",
@@ -54,6 +55,7 @@
     "react-swipeable-views": "0.13.9",
     "react-text-loop": "^2.3.0",
     "styled-components": "5.1.0",
-    "webpack": "4.43.0"
+    "webpack": "4.43.0",
+    "yup": "^0.32.8"
   }
 }

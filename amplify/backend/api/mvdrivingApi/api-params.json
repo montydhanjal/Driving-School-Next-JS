@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/api/contactus",
+            "lambdaFunction": "drivingschoolemailcontactus",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/api/contactus"
+        }
+    ],
+    "resourceName": "mvdrivingApi",
+    "apiName": "mvdrivingApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "drivingschoolemailcontactus"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-drivingschoolnextjs-dev-194128-authRole",
+        "unAuthRoleName": "amplify-drivingschoolnextjs-dev-194128-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "drivingschoolemailcontactus",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

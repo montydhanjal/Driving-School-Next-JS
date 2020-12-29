@@ -16,6 +16,8 @@
 
 */
 import React from "react";
+import Amplify, { API } from "aws-amplify";
+import awsconfig from "aws-exports";
 import ReactDOM from "react-dom";
 import App from "next/app";
 import Head from "next/head";
@@ -42,6 +44,7 @@ Router.events.on("routeChangeError", () => {
   document.body.classList.remove("body-page-transition");
 });
 
+Amplify.configure(awsconfig);
 export default class MyApp extends App {
   componentDidMount() {
     let comment = document.createComment(`
@@ -72,6 +75,7 @@ export default class MyApp extends App {
 
     return { pageProps };
   }
+
   render() {
     const { Component, pageProps } = this.props;
 

@@ -4,7 +4,6 @@ import Link from "next/link";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
 // @material-ui/icons
 
 // core components
