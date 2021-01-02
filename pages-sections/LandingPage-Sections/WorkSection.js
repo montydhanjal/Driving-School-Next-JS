@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
 import { useFormik } from "formik";
+import ReCAPTCHA from "react-google-recaptcha";
+
 // @material-ui/icons
 import * as Yup from "yup";
 // core components
@@ -13,6 +16,7 @@ import Button from "components/CustomButtons/Button.js";
 import { TextField } from "@material-ui/core";
 import SnackbarContent from "components/Snackbar/SnackbarContent.js";
 import Clearfix from "components/Clearfix/Clearfix.js";
+import Recaptcha from "react-recaptcha";
 
 import styles from "assets/jss/nextjs-material-kit/pages/landingPageSections/workStyle.js";
 
@@ -23,11 +27,20 @@ const validationSchema = Yup.object({
   lastName: Yup.string().required("Last Name is required"),
   msg: Yup.string().required("Last Name is required"),
   email: Yup.string().email().required("First Name is required"),
+  recaptcha: Yup.string().required("Recaptcha Required").nullable(),
 });
 
 export default function WorkSection() {
   const [error, isError] = useState(false);
   const [success, isSucess] = useState(false);
+  const recaptaRef = useRef(null);
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }, []);
 
   const formik = useFormik({
     initialValues: {
@@ -35,6 +48,7 @@ export default function WorkSection() {
       lastName: "",
       email: "",
       msg: "",
+      recaptcha: "",
     },
     validationSchema,
     onSubmit: (values, actions) => {
@@ -55,8 +69,18 @@ export default function WorkSection() {
     },
   });
 
-  const classes = useStyles();
+  function onChange(value) {
+    console.log("Captcha value:", value);
+  }
 
+  // console.log(formik);
+  const classes = useStyles();
+  // console.log(recaptaRef);
+  function reset() {
+    if (recaptaRef.current) recaptaRef.current.reset();
+
+    formik.resetForm();
+  }
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
@@ -175,6 +199,12 @@ export default function WorkSection() {
             />
           </GridItem>
 
+          <GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
+            {formik.errors.recaptcha ? (
+              <h5 style={{ color: "red" }}>{formik.errors.recaptcha}</h5>
+            ) : null}
+          </GridItem>
+
           <GridItem xs={12} sm={12} md={4} className={classes.textCenter}>
             <Button
               disabled={formik.isSubmitting}
@@ -183,9 +213,32 @@ export default function WorkSection() {
             >
               Send Message
             </Button>
-            <Button onClick={formik.resetForm} color="secondary">
+            {/* <Button onClick={reset} color="secondary">
               Reset
-            </Button>
+            </Button> */}
+          </GridItem>
+          <GridItem
+            xs={12}
+            sm={12}
+            md={12}
+            style={{ textAlign: "-webkit-center" }}
+            className={classes.textCenter}
+          >
+            <Recaptcha
+              sitekey="6LcygxwaAAAAAG2WtUIqXRQeg9l_waUJGJfmUZqa"
+              render="explicit"
+              ref={(e) => (recaptaRef.current = e)}
+              style={{ textAlign: "center" }}
+              theme="light"
+              size="normal"
+              badge="bottomright"
+              verifyCallback={(response) => {
+                formik.setFieldValue("recaptcha", response);
+              }}
+              onloadCallback={() => {
+                console.log("done loading!");
+              }}
+            />
           </GridItem>
         </GridContainer>
       </form>

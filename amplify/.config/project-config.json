@@ -1,4 +1,7 @@
 {
+  "providers": [
+    "awscloudformation"
+  ],
   "projectName": "DrivingSchoolNextJS",
   "version": "3.0",
   "frontend": "javascript",
@@ -7,11 +10,8 @@
     "config": {
       "SourceDir": ".",
       "DistributionDir": "out",
-      "BuildCommand": "npm run build",
-      "StartCommand": "npm run start"
+      "BuildCommand": "yarn run build",
+      "StartCommand": "yarn run start"
     }
-  },
-  "providers": [
-    "awscloudformation"
-  ]
+  }
 }
