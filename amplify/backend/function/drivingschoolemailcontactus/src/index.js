@@ -15,7 +15,7 @@ exports.handler = async function (event) {
         Text: { Data: body.msg },
       },
       Subject: {
-        Data: `MV Driving School: Message from ${body.firstName} ${body.lastName}, Email: ${body.email}`,
+        Data: `MV Driving School: Message from ${body.firstName} ${body.lastName}, From: ${body.email}`,
       },
     },
     Source: "montydhanjal@gmail.com",

@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import { useFormik } from "formik";
 import ReCAPTCHA from "react-google-recaptcha";
-
+import "yup-phone";
 // @material-ui/icons
 import * as Yup from "yup";
 // core components
@@ -21,13 +21,14 @@ import Recaptcha from "react-recaptcha";
 import styles from "assets/jss/nextjs-material-kit/pages/landingPageSections/workStyle.js";
 
 const useStyles = makeStyles(styles);
-
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 const validationSchema = Yup.object({
   firstName: Yup.string().required("First Name is required"),
   lastName: Yup.string().required("Last Name is required"),
   msg: Yup.string().required("Last Name is required"),
   email: Yup.string().email().required("First Name is required"),
   recaptcha: Yup.string().required("Recaptcha Required").nullable(),
+  phone: Yup.string().required("Field is required").phone("US"),
 });
 
 export default function WorkSection() {
@@ -48,6 +49,7 @@ export default function WorkSection() {
       lastName: "",
       email: "",
       msg: "",
+      phone: "",
       recaptcha: "",
     },
     validationSchema,
@@ -133,7 +135,7 @@ export default function WorkSection() {
           alignItems="center"
           justify="center"
         >
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={6} md={3}>
             <TextField
               id="firstName"
               label="First Name"
@@ -149,7 +151,7 @@ export default function WorkSection() {
               }
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={6} md={3}>
             <TextField
               id="lastName"
               style={{ width: "100%" }}
@@ -165,7 +167,7 @@ export default function WorkSection() {
               }
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={6} md={3}>
             <TextField
               id="email"
               style={{ width: "100%" }}
@@ -177,6 +179,22 @@ export default function WorkSection() {
               helperText={
                 formik.errors.email && formik.touched.email
                   ? formik.errors.email
+                  : ""
+              }
+            />
+          </GridItem>
+          <GridItem xs={12} sm={6} md={3}>
+            <TextField
+              id="phone"
+              style={{ width: "100%" }}
+              label="Phone"
+              variant="outlined"
+              onChange={formik.handleChange}
+              value={formik.values.phone}
+              error={formik.errors.phone && formik.touched.phone}
+              helperText={
+                formik.errors.phone && formik.touched.phone
+                  ? formik.errors.phone
                   : ""
               }
             />
