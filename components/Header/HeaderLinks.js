@@ -58,13 +58,13 @@ export default function HeaderLinks() {
           </Button>
         </Link>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <Link href="/index" passHref>
           <Button color="transparent" className={classes.navLink}>
             Teens
           </Button>
         </Link>
-      </ListItem>
+      </ListItem> */}
       {/* <ListItem className={classes.listItem}>
         <Link href="/index" passHref>
           <Button color="transparent" className={classes.navLink}>
