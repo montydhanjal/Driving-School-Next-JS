@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
 import { useFormik } from "formik";
+import ReCAPTCHA from "react-google-recaptcha";
+import "yup-phone";
 // @material-ui/icons
 import * as Yup from "yup";
 // core components
@@ -13,21 +16,32 @@ import Button from "components/CustomButtons/Button.js";
 import { TextField } from "@material-ui/core";
 import SnackbarContent from "components/Snackbar/SnackbarContent.js";
 import Clearfix from "components/Clearfix/Clearfix.js";
+import Recaptcha from "react-recaptcha";
 
 import styles from "assets/jss/nextjs-material-kit/pages/landingPageSections/workStyle.js";
 
 const useStyles = makeStyles(styles);
-
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 const validationSchema = Yup.object({
   firstName: Yup.string().required("First Name is required"),
   lastName: Yup.string().required("Last Name is required"),
   msg: Yup.string().required("Last Name is required"),
   email: Yup.string().email().required("First Name is required"),
+  recaptcha: Yup.string().required("Recaptcha Required").nullable(),
+  phone: Yup.string().required("Field is required").phone("US"),
 });
 
 export default function WorkSection() {
   const [error, isError] = useState(false);
   const [success, isSucess] = useState(false);
+  const recaptaRef = useRef(null);
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }, []);
 
   const formik = useFormik({
     initialValues: {
@@ -35,6 +49,8 @@ export default function WorkSection() {
       lastName: "",
       email: "",
       msg: "",
+      phone: "",
+      recaptcha: "",
     },
     validationSchema,
     onSubmit: (values, actions) => {
@@ -55,14 +71,24 @@ export default function WorkSection() {
     },
   });
 
-  const classes = useStyles();
+  function onChange(value) {
+    console.log("Captcha value:", value);
+  }
 
+  // console.log(formik);
+  const classes = useStyles();
+  // console.log(recaptaRef);
+  function reset() {
+    if (recaptaRef.current) recaptaRef.current.reset();
+
+    formik.resetForm();
+  }
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
           <h2 className={classes.title}>
-            To Register Call or Text @ 4084778206
+            To Register Call or Text @ 408-477-0086
           </h2>
           <h4 className={classes.description}>
             Fill the form below to get in contact with us
@@ -109,7 +135,7 @@ export default function WorkSection() {
           alignItems="center"
           justify="center"
         >
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={6} md={3}>
             <TextField
               id="firstName"
               label="First Name"
@@ -125,7 +151,7 @@ export default function WorkSection() {
               }
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={6} md={3}>
             <TextField
               id="lastName"
               style={{ width: "100%" }}
@@ -141,7 +167,7 @@ export default function WorkSection() {
               }
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={6} md={3}>
             <TextField
               id="email"
               style={{ width: "100%" }}
@@ -153,6 +179,22 @@ export default function WorkSection() {
               helperText={
                 formik.errors.email && formik.touched.email
                   ? formik.errors.email
+                  : ""
+              }
+            />
+          </GridItem>
+          <GridItem xs={12} sm={6} md={3}>
+            <TextField
+              id="phone"
+              style={{ width: "100%" }}
+              label="Phone"
+              variant="outlined"
+              onChange={formik.handleChange}
+              value={formik.values.phone}
+              error={formik.errors.phone && formik.touched.phone}
+              helperText={
+                formik.errors.phone && formik.touched.phone
+                  ? formik.errors.phone
                   : ""
               }
             />
@@ -175,6 +217,12 @@ export default function WorkSection() {
             />
           </GridItem>
 
+          <GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
+            {formik.errors.recaptcha ? (
+              <h5 style={{ color: "red" }}>{formik.errors.recaptcha}</h5>
+            ) : null}
+          </GridItem>
+
           <GridItem xs={12} sm={12} md={4} className={classes.textCenter}>
             <Button
               disabled={formik.isSubmitting}
@@ -183,9 +231,32 @@ export default function WorkSection() {
             >
               Send Message
             </Button>
-            <Button onClick={formik.resetForm} color="secondary">
+            {/* <Button onClick={reset} color="secondary">
               Reset
-            </Button>
+            </Button> */}
+          </GridItem>
+          <GridItem
+            xs={12}
+            sm={12}
+            md={12}
+            style={{ textAlign: "-webkit-center" }}
+            className={classes.textCenter}
+          >
+            <Recaptcha
+              sitekey="6LcygxwaAAAAAG2WtUIqXRQeg9l_waUJGJfmUZqa"
+              render="explicit"
+              ref={(e) => (recaptaRef.current = e)}
+              style={{ textAlign: "center" }}
+              theme="light"
+              size="normal"
+              badge="bottomright"
+              verifyCallback={(response) => {
+                formik.setFieldValue("recaptcha", response);
+              }}
+              onloadCallback={() => {
+                console.log("done loading!");
+              }}
+            />
           </GridItem>
         </GridContainer>
       </form>

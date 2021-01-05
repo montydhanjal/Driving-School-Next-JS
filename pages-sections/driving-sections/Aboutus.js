@@ -39,8 +39,8 @@ export default function Aboutus() {
   const classes = useStyles();
 
   const rows = [
-    createData("Fremont, Union City, Newark", "$90", "$265", "$100"),
-    createData("Milpitas", "$90", "$265", "$100"),
+    createData("Fremont, Union City, Newark", "$90", "$270", "$100"),
+    createData("Milpitas", "$100", "$300", "$100"),
   ];
 
   return (
@@ -52,7 +52,7 @@ export default function Aboutus() {
           </h4>
 
           <h2 className={classes.title}>
-            To Register Call or Text @ 4084778206
+            To Register Call or Text @ 408-477-0086
             <br />
             <Small className={classes.description}>
               Mon-​Fri: 9:00 AM-5:00 PM Sat-​Sun: Closed<br></br> After hours

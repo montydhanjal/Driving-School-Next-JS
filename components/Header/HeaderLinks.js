@@ -20,6 +20,30 @@ export default function HeaderLinks() {
   const classes = useStyles();
   return (
     <List className={classes.list}>
+      {/* <ListItem className={classes.listItem}>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          buttonText="Components"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent",
+          }}
+          buttonIcon={Apps}
+          dropdownList={[
+            <Link href="/components">
+              <a className={classes.dropdownLink}>All components</a>
+            </Link>,
+            <a
+              href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"
+              target="_blank"
+              className={classes.dropdownLink}
+            >
+              Documentation
+            </a>,
+          ]}
+        />
+      </ListItem> */}
       <ListItem className={classes.listItem}>
         <Link href="/index" passHref>
           <Button color="transparent" className={classes.navLink}>
@@ -34,13 +58,13 @@ export default function HeaderLinks() {
           </Button>
         </Link>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <Link href="/index" passHref>
           <Button color="transparent" className={classes.navLink}>
             Teens
           </Button>
         </Link>
-      </ListItem>
+      </ListItem> */}
       {/* <ListItem className={classes.listItem}>
         <Link href="/index" passHref>
           <Button color="transparent" className={classes.navLink}>
