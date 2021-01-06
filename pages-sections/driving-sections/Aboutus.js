@@ -40,7 +40,7 @@ export default function Aboutus() {
 
   const rows = [
     createData("Fremont, Union City, Newark", "$90", "$270", "$100"),
-    createData("Milpitas", "$100", "$300", "$140"),
+    createData("Milpitas ", "$100", "$300", "$140"),
   ];
 
   return (
