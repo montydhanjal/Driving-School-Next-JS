@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-drivingschoolnextjs-dev-194128-deployment",
-          "S3Key": "amplify-builds/drivingschoolemailcontactus-4e4b73793142636c3344-build.zip"
+          "S3Key": "amplify-builds/drivingschoolemailcontactus-454f456e32552b644467-build.zip"
         }
       }
     },
