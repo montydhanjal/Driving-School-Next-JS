@@ -8,7 +8,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 
 // @material-ui/icons
-
+import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 // core components
 import Button from "components/CustomButtons/Button.js";
 
@@ -20,30 +20,6 @@ export default function HeaderLinks() {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      {/* <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          navDropdown
-          buttonText="Components"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent",
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link href="/components">
-              <a className={classes.dropdownLink}>All components</a>
-            </Link>,
-            <a
-              href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              Documentation
-            </a>,
-          ]}
-        />
-      </ListItem> */}
       <ListItem className={classes.listItem}>
         <Link href="/index" passHref>
           <Button color="transparent" className={classes.navLink}>
@@ -78,6 +54,34 @@ export default function HeaderLinks() {
             About Us
           </Button>
         </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          buttonText="Online Education"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent",
+          }}
+          // buttonIcon={Apps}
+          dropdownList={[
+            <a
+              href="http://teendrivingonline.com/info.php?refid=NDky"
+              target="_blank"
+              className={classes.dropdownLink}
+            >
+              Teen Drivers
+            </a>,
+            <a
+              href="http://www.comedyschoolonline.com/referrals.php?refid=NDky"
+              target="_blank"
+              className={classes.dropdownLink}
+            >
+              Traffic School
+            </a>,
+          ]}
+        />
       </ListItem>
     </List>
   );
