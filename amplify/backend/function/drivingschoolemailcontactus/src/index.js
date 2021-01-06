@@ -8,7 +8,7 @@ exports.handler = async function (event) {
   }
   var params = {
     Destination: {
-      ToAddresses: ["montydhanjal@gmail.com"],
+      ToAddresses: ["missionvalleydriving@gmail.com"],
     },
     Message: {
       Body: {
