@@ -45,6 +45,13 @@ export default function Aboutus() {
 
   return (
     <div className={classes.section}>
+       <GridContainer justify="center">
+        <GridItem xs={12} sm={12} md={8}>
+          <span style={{color: "red", fontWeight: 600}}> We are not accepting new students at this moment. Sorry for the invonvience, Once we start taking new students we will update our webside.
+   </span>
+       
+        </GridItem>
+     </GridContainer>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
           <h4 className={classes.title}>
