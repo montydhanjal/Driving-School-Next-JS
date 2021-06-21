@@ -47,8 +47,9 @@ export default function Aboutus() {
     <div className={classes.section}>
        <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
-          <span style={{color: "red", fontWeight: 600}}> We are not accepting new students at this moment. Sorry for the inconvenience, Once we start taking new students we will update our website.
-   </span>
+          <span style={{color: "red", fontWeight: 600}}> 
+          We are in process of relocating our driving school and therefore currently we are not accepting new students. Sorry for the inconvenience, Once we start taking new students we will update our website.
+          </span>
        
         </GridItem>
      </GridContainer>
