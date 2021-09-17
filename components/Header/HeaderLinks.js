@@ -55,7 +55,7 @@ export default function HeaderLinks() {
           </Button>
         </Link>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           navDropdown
@@ -82,7 +82,7 @@ export default function HeaderLinks() {
             </a>,
           ]}
         />
-      </ListItem>
+      </ListItem> */}
     </List>
   );
 }
