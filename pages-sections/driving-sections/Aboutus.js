@@ -39,8 +39,8 @@ export default function Aboutus() {
   const classes = useStyles();
 
   const rows = [
-    createData("Fremont, Union City, Newark", "$90", "$270", "$100"),
-    createData("Milpitas ", "$100", "$300", "$140"),
+    createData("Sacramento (Zip Code: Only 95828)", "$120", "$360", "$120"),
+    createData("Elk Grove (Zip Code: all)", "$120", "$360", "$120"),
   ];
 
   return (
@@ -48,7 +48,9 @@ export default function Aboutus() {
        <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
           <span style={{color: "red", fontWeight: 600}}> 
-          We are in process of relocating our driving school and therefore currently we are not accepting new students. Sorry for the inconvenience, Once we start taking new students we will update our website.
+            MV Driving school will not be accepting students from Bay Area.
+            <br />
+            Existing students can call us on 408-477-0086 for any question
           </span>
        
         </GridItem>
@@ -60,11 +62,18 @@ export default function Aboutus() {
           </h4>
 
           <h2 className={classes.title}>
-            To Register Call or Text @ 408-477-0086
+            To Register Call or Text
+            <br />
+            @ <a href="tel:9168831585">916-883-1585</a>
             <br />
             <Small className={classes.description}>
-              Mon-​Fri: 9:00 AM-5:00 PM Sat-​Sun: Closed<br></br> After hours
-              only text or email
+              <span style={{ lineHeight: "120%" }}>
+                Mon-​Fri: 9:00 AM-5:00 PM
+                <br />
+                Sat-​Sun: Closed
+                <br />
+                After hours only text 
+              </span>
             </Small>
           </h2>
         </GridItem>
@@ -79,7 +88,7 @@ export default function Aboutus() {
                   <TableCell align="right">2 Hours</TableCell>
                   <TableCell align="right">6 Hours</TableCell>
                   <TableCell align="right">
-                    DMV Test <br></br> (Fremont DMV Only)
+                    DMV Test <br></br> (South Sacramento DMV Only)
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -97,7 +106,8 @@ export default function Aboutus() {
               </TableBody>
             </Table>
             <Danger className={classes.dangerText}>
-              - Dri­ving Test Only “For using our car at the DMV” (Fre­mont DMV)
+              - Dri­ving Test Only “For using our car at the DMV” (South Sacramento DMV)
+              <br />
               *Only for the stu­dents who have enrolled in the dri­ving Classes.
             </Danger>
           </TableContainer>
@@ -112,7 +122,6 @@ export default function Aboutus() {
               </ListItemIcon>
               <ListItemText
                 primary="Free pick-​up/​drop-​off from home, work, or school."
-                secondary="Fremont, Union City, Newark and Milpitas only"
               />
             </ListItem>
             <ListItem>

@@ -88,10 +88,12 @@ export default function WorkSection() {
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
           <h2 className={classes.title}>
-            To Register Call or Text @ 408-477-0086
+            To Register Call or text
+            <br />
+            @ <a href="tel:9168831585">916-883-1585</a>
           </h2>
           <h4 className={classes.description}>
-            Fill the form below to get in contact with us
+            Fill the form below for any inquiry
           </h4>
         </GridItem>
       </GridContainer>
