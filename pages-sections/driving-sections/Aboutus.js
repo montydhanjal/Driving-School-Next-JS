@@ -39,8 +39,10 @@ export default function Aboutus() {
   const classes = useStyles();
 
   const rows = [
-    createData("Sacramento (Zip Code: Only 95828)", "$120", "$360", "$120"),
-    createData("Elk Grove (Zip Code: all)", "$120", "$360", "$120"),
+
+    createData("Sacramento (Zip Code: Only 95828)", "$110", "$330", "$120"),
+    createData("Elk Grove (Zip Code: all)", "$110", "$330", "$120"),
+
   ];
 
   return (
