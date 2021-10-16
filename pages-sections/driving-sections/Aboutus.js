@@ -39,10 +39,8 @@ export default function Aboutus() {
   const classes = useStyles();
 
   const rows = [
-
     createData("Sacramento", "$110", "$330", "$120"),
     createData("Elk Grove", "$110", "$330", "$120"),
-
   ];
 
   return (
