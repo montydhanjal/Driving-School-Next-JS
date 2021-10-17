@@ -39,10 +39,8 @@ export default function Aboutus() {
   const classes = useStyles();
 
   const rows = [
-
-    createData("Sacramento (Zip Code: Only 95828)", "$110", "$330", "$120"),
-    createData("Elk Grove (Zip Code: all)", "$110", "$330", "$120"),
-
+    createData("Sacramento", "$110", "$330", "$120"),
+    createData("Elk Grove", "$110", "$330", "$120"),
   ];
 
   return (
@@ -166,7 +164,7 @@ export default function Aboutus() {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="DMV Licensed"
+              title="DMV Licensed (E2004)"
               description="All our Instructors are DMV Licensed, mentally and physically fit and have decade or more of Instruction History."
               icon={DriveEta}
               iconColor="success"
