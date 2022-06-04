@@ -39,13 +39,14 @@ export default function Aboutus() {
   const classes = useStyles();
 
   const rows = [
-    createData("Sacramento", "$110", "$330", "$120"),
-    createData("Elk Grove", "$110", "$330", "$120"),
+    createData("Sacramento", "$120", "$360", "$150"),
+    createData("Elk Grove", "$120", "$360", "$150"),
   ];
+
 
   return (
     <div className={classes.section}>
-       <GridContainer justify="center">
+       <GridContainer justify="center" >
         <GridItem xs={12} sm={12} md={8}>
           <span style={{color: "red", fontWeight: 600}}> 
             MV Driving school will not be accepting students from Bay Area.
