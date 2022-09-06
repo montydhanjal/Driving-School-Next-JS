@@ -46,16 +46,6 @@ export default function Aboutus() {
 
   return (
     <div className={classes.section}>
-       <GridContainer justify="center" >
-        <GridItem xs={12} sm={12} md={8}>
-          <span style={{color: "red", fontWeight: 600}}> 
-            MV Driving school will not be accepting students from Bay Area.
-            <br />
-            Existing students can call us on 408-477-0086 for any question
-          </span>
-       
-        </GridItem>
-     </GridContainer>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
           <h4 className={classes.title}>

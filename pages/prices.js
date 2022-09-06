@@ -111,7 +111,7 @@ export default function LandingPage(props) {
             </ListItem>
           </List>
           <Aboutus />
-          <WorkSection />
+          {/* <WorkSection /> */}
         </div>
       </div>
       {/* <Footer /> */}
