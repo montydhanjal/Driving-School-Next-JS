@@ -91,7 +91,7 @@ const Index = (props) => {
         <div className={classes.container}>
           <Aboutus />
           {/* <TeamSection /> */}
-          <WorkSection />
+          {/* <WorkSection /> */}
         </div>
       </div>
       {/* <Footer /> */}
