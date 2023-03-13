@@ -58,6 +58,7 @@ export default function WorkSection() {
         .then((x) => {
           isSucess(true);
           isError(false);
+          actions.resetForm()
         })
         .catch((err) => {
           isSucess(false);
@@ -68,6 +69,8 @@ export default function WorkSection() {
         // you have to clean up
         actions.setSubmitting(false);
       }, 4000);
+
+
     },
   });
 
