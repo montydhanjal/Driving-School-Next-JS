@@ -9,4 +9,7 @@ module.exports = withPlugins([[withSass], [withImages]], {
     config.resolve.modules.push(path.resolve("./"));
     return config;
   }
+
+
+  
 });
