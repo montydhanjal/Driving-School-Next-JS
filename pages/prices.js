@@ -101,20 +101,12 @@ export default function LandingPage(props) {
               <ListItemIcon>
                 <StarIcon />
               </ListItemIcon>
-              <ListItemText primary="$25- Fee for lost com­ple­tion form and return check." />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <StarIcon />
-              </ListItemIcon>
               <ListItemText primary="Money is only valid for one year start­ing the day you pay." />
             </ListItem>
           </List>
           <Aboutus />
-          {/* <WorkSection /> */}
         </div>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }
