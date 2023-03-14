@@ -39,10 +39,9 @@ export default function Aboutus() {
   const classes = useStyles();
 
   const rows = [
-    createData("Sacramento", "$120", "$360", "$150"),
-    createData("Elk Grove", "$120", "$360", "$150"),
+    createData("Redding", "$120", "$360", "$150"),
+    createData("Anderson", "$120", "$360", "$150"),
   ];
-
 
   return (
     <div className={classes.section}>
@@ -79,7 +78,7 @@ export default function Aboutus() {
                   <TableCell align="right">2 Hours</TableCell>
                   <TableCell align="right">6 Hours</TableCell>
                   <TableCell align="right">
-                    DMV Test <br></br> (South Sacramento DMV Only)
+                    DMV Test <br></br> (Redding DMV Only)
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -97,7 +96,7 @@ export default function Aboutus() {
               </TableBody>
             </Table>
             <Danger className={classes.dangerText}>
-              - Dri­ving Test Only “For using our car at the DMV” (South Sacramento DMV)
+              - Dri­ving Test Only “For using our car at the DMV” (Redding DMV)
               <br />
               *Only for the stu­dents who have enrolled in the dri­ving Classes.
             </Danger>
