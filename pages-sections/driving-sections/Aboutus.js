@@ -41,6 +41,8 @@ export default function Aboutus() {
   const rows = [
     createData("Redding", "$120", "$360", "$150"),
     createData("Anderson", "$120", "$360", "$150"),
+    createData("Shasta Lake", "$120", "$360", "$150"),
+    createData("Cottonwood", "$130", "$370", "$175"),
   ];
 
   return (
